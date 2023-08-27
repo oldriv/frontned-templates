@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Dette er en [Next.js](https://nextjs.org/) prosjekt opprettet med [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Formålet er å bruke den som en mal for utvikling.
 
-## Getting Started
+I dette prosjektet benyttes Docker for utvikling.
 
-First, run the development server:
+## Bruksanvisning
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Sørg for at Docker (eller noe lignende) er installert å kjører. Sørg for at du har følgende i ditt `etc/hosts` fil:
+
+```
+127.0.0.1 host.docker.internal
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Du starter applikasjoner og avhengigheter med `docker-compose`.
+
+```bash
+docker-compose up
+```
+
+Nå bør du ha:
+
+- en Next.js applikasjon som lytter på port 4000
+- en Wonderwall instans som lytter på port 3000
+- en Mock Oauth2 Server som lytter på port 8080
+- en Redis instans på port 6379
+
+Åpne [http://localhost:3000](http://localhost:3000) i din nettleser for å aksessere applikasjonen. Hvis du bruker [http://localhost:4000](http://localhost:4000) vil Wonderwall omgås.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
